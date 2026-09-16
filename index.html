@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f2f2f2;
+            background: #e8f0fe;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,18 +20,33 @@
             padding: 30px;
             width: 350px;
             text-align: center;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            margin-bottom: 20px;
         }
 
         input {
             width: 90%;
             padding: 10px;
             margin: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
         button {
-            padding: 10px 20px;
+            padding: 10px 25px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -43,6 +58,7 @@
 
         <input type="text" id="name" placeholder="Enter your name">
         <input type="text" id="course" placeholder="Enter your course">
+        <input type="text" id="year" placeholder="Enter your year level">
 
         <button onclick="showInfo()">Submit</button>
 
@@ -53,11 +69,20 @@
         function showInfo() {
             let name = document.getElementById("name").value;
             let course = document.getElementById("course").value;
+            let year = document.getElementById("year").value;
+
+            if (name === "" || course === "" || year === "") {
+                document.getElementById("result").innerHTML =
+                    "Please complete all fields.";
+                return;
+            }
 
             document.getElementById("result").innerHTML =
-                "Name: " + name + "<br>Course: " + course;
+                "Name: " + name +
+                "<br>Course: " + course +
+                "<br>Year Level: " + year;
         }
     </script>
 
 </body>
-</html
+</html>
