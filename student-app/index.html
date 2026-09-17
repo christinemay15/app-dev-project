@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Student Information</h1>
+            <p>Enter your student details</p>
+        </div>
+
+        <form id="studentForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your full name">
+
+            <label for="course">Course</label>
+            <input type="text" id="course" placeholder="Enter your course">
+
+            <label for="year">Year Level</label>
+            <select id="year">
+                <option value="">Select year level</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+            </select>
+
+            <button type="submit">Submit Information</button>
+        </form>
+
+        <div id="result" class="result">
+            <h2>Student Details</h2>
+            <p><strong>Name:</strong> <span id="displayName"></span></p>
+            <p><strong>Course:</strong> <span id="displayCourse"></span></p>
+            <p><strong>Year Level:</strong> <span id="displayYear"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
